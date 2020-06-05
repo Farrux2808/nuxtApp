@@ -1,13 +1,27 @@
 <template>
-  <div>
-    <data-tables-server v-loading="loading" :data="data" :current-page="query.currentPage" 
+<el-card>
+  <el-row :gutter="20">
+    <el-col :span="7"><el-button-group>
+        <el-button type="defoult">Today</el-button>
+        <el-button type="defoult">Yesterday</el-button>
+        <el-button type="defoult">Month</el-button>
+        <el-button type="defoult">Year</el-button>
+      </el-button-group></el-col>
+    <el-col :span="6">
+      <el-input  placeholder="Pick a date" suffix-icon="el-icon-date"></el-input>
+    </el-col>
+    <el-col :span="2"><el-button type="primary" icon="el-icon-refresh"></el-button></el-col>
+    <el-col :span="1"><el-button type="primary" icon="el-icon-document">Download CSV</el-button></el-col>
+  </el-row>
+  <data-tables-server v-loading="loading" :data="data" :current-page="query.currentPage" 
       :total="query.total" @query-change="loadData" :page-size="query.limit"
       :pagination-props="query.pageSizes"
       :checkbox-filter-def="checkboxFilterDef">
       <el-table-column v-for="title in titles" :prop="title.prop" :label="title.label" :key="title.prop" sortable="custom">
       </el-table-column>
     </data-tables-server>
-  </div>
+</el-card>
+
 </template>
 
 <script>
@@ -161,3 +175,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.bg-purple-light {
+    background: #e5e9f2;
+  }
+</style>
