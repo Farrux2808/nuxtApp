@@ -16,7 +16,7 @@
     "element-ui": "^2.4.11",
     "express": "^4.16.4",
     "mongoose": "^5.9.18",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "vue-data-tables": "^3.4.3"
   },
   "devDependencies": {
